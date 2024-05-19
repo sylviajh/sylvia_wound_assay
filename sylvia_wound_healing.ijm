@@ -51,7 +51,11 @@ function edge_max_coordinates(arr_ROI)
 function diff_arrays(arr_max, arr_min)
 {
      arr_diff = newArray();
-     for (x = 0; x< arr_max.length-1; x++)
+     size = arr_max.length;
+     if (arr_min.length < size) {
+      size = arr_min.length;
+     }
+     for (x = 0; x< size-1; x++)
      {
            arr_diff = Array.concat(arr_diff, arr_max [x] - arr_min [x]);
      }
